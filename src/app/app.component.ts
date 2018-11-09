@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 declare var $: any;
 
@@ -7,7 +7,7 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'app';
   images: { id: number, imagePath: string }[] = [
     { "id": 0, "imagePath": "assets/product-images/carro.jpg" },
@@ -15,5 +15,14 @@ export class AppComponent {
     { "id": 2, "imagePath": "assets/product-images/carro.jpg" },
     { "id": 3, "imagePath": "assets/product-images/carro.jpg" },
     { "id": 4, "imagePath": "assets/product-images/carro.jpg" }
+
   ];
+
+  ngAfterViewInit() {
+    this.images.forEach((item, index) => {
+      $(document).ready(function () {
+        $('#zoom-' + index.toString()).zoom({ magnify: 2 });
+      });
+    });
+  }
 }

@@ -82,3 +82,47 @@ img {
         transform: scale(1);
     }
 }
+
+/* styles unrelated to zoom */
+p { 
+    position:absolute; 
+    top:0; right:20px; 
+    color:#555; 
+    font:bold 13px/1 sans-serif;
+    background:white;
+    opacity: 0.4;
+    line-height: 20px;
+    margin:0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* these styles are for the demo, but are not required for the plugin */
+.zoom {
+    display:inline-block;
+    position: relative;      
+}
+
+/* magnifying glass icon */
+.zoom:after {
+    content:"\f002";
+    font-family: FontAwesome;
+    display:block;
+    position:absolute; 
+    line-height: 20px;
+    width: 20px;
+    top:0;
+    right:0;
+    color:#555;
+    background:white;
+    opacity: 0.4;    
+    padding-left: 3px;
+}
+
+.zoom img {
+    display: block;
+}
+
+.zoom img::selection {
+    background-color: transparent;
+}

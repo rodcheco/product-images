@@ -4,7 +4,10 @@
       <div class="preview">
         <div class="preview-pic tab-content">
           <div class="tab-pane" [ngClass]="{'active': image.id == 0}" id="pic-{{idx}}" *ngFor="let image of images; let idx = index">
-            <img [src]="image.imagePath">
+            <span class='zoom' #zoom id='zoom-{{idx}}'>
+              <img [src]="image.imagePath">
+              <p>Hover</p>
+            </span>
           </div>
         </div>
         <ul class="preview-thumbnail nav nav-tabs">
